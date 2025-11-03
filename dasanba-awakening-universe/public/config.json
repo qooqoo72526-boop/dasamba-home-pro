@@ -1,0 +1,4 @@
+{
+  "talkEndpoint": "/api/talk",
+  "bgm": "assets/bgm.mp3"
+}

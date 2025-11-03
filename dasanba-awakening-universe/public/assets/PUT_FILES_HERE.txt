@@ -1,0 +1,7 @@
+
+請把素材放在這裡（檔名要一模一樣）：
+- 首頁固定影片（客廳生活）: hero.mp4
+- 橫向合照：trio.webp / trio2.webp / trio3.webp（trio3 是星空照）
+- 角色卡：ajin.webp / migou.webp / gungun.webp
+- 個人短片（可選）：ajin.mp4 / migou.mp4 / gungun.mp4
+- 背景音樂：bgm.mp3

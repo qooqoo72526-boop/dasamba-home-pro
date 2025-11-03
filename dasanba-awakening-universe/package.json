@@ -1,0 +1,6 @@
+{
+  "name": "dasanba-awakening-universe",
+  "private": true,
+  "scripts": { "start": "vercel dev" },
+  "dependencies": {}
+}
