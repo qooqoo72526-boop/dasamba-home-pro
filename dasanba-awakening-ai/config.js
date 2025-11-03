@@ -1,0 +1,1 @@
+export const CONFIG={BASE_URL:"https://api.openai.com/v1",API_KEY:process.env.OPENAI_API_KEY};
