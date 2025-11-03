@@ -1,0 +1,36 @@
+@font-face { font-family: 'CormorantG'; src: local('Cormorant Garamond'); }
+:root{ --bg:#0a0b12; --gold:#d1b777; --soft:#c9d6ff22; --glass:#ffffff10; --white:#f4f4f6; }
+*{box-sizing:border-box} html,body{height:100%}
+body.universe{margin:0;background:radial-gradient(1200px 600px at 50% -10%, #1a1e35, #0a0b12); color:var(--white); font-family: 'Noto Serif TC', 'CormorantG', serif; letter-spacing:.3px}
+#stars{position:fixed;inset:0;z-index:0;pointer-events:none}
+#splash{position:fixed;inset:0;background:linear-gradient(180deg,#0a0b12,#141833);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;z-index:9}
+#splash .en-title{font-family:'CormorantG',serif;font-size:28px;letter-spacing:.28em;opacity:.9}
+#splash .en-sub{font-size:14px;opacity:.7}
+#splash.hide{animation:fade .8s forwards}@keyframes fade{to{opacity:0;visibility:hidden}}
+.hero-wrap{position:relative;z-index:1;display:flex;justify-content:center;padding:48px 16px 8px}
+.hero-video{width:min(960px,92vw);border-radius:16px;box-shadow:0 20px 60px #0008;opacity:.95}
+.cards{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;padding:20px 12px;z-index:1;position:relative}
+.card{position:relative;background:var(--glass);backdrop-filter:blur(8px);border:1px solid #ffffff18;border-radius:14px;overflow:hidden;padding:10px;transform:translateZ(0);transition:.25s}
+.card img{width:160px;height:220px;object-fit:cover;border-radius:10px;display:block}
+.card .tag{margin-top:6px;font-size:12px;opacity:.8}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 30px #0006}
+.trio{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:8px 12px 28px}
+.trio img{width:min(480px,92vw);border-radius:12px;box-shadow:0 10px 30px #0007;opacity:.95}
+.motto{padding:28px 16px 44px;text-align:center;opacity:.85}
+.motto p{margin:6px 0}
+header.thin{position:sticky;top:0;display:flex;align-items:center;gap:10px;padding:10px 12px;background:linear-gradient(180deg,#0a0b12ee,#0a0b1200);z-index:2}
+.page-chip{font-size:12px;opacity:.8}
+.home{color:var(--gold);text-decoration:none}
+.lang{margin-left:auto}
+.letters,.mirror{position:relative;z-index:1;max-width:960px;margin:16px auto;padding:0 12px}
+.bubble-input{min-height:56px;padding:14px 16px;border-radius:14px;background:#ffffff0f;border:1px solid #ffffff1a;outline:none}
+.bubble-input:empty:before{content:attr(data-placeholder);opacity:.5}
+.send{margin:10px 0 14px;background:transparent;color:var(--gold);border:1px solid var(--gold);padding:8px 14px;border-radius:999px;cursor:pointer}
+.flow{display:flex;flex-direction:column;gap:10px}
+.bubble{max-width:80%;padding:12px 14px;border-radius:14px;background:#ffffff12;border:1px solid #ffffff1a}
+.bubble.me{align-self:flex-end;background:#dbc79b20;border-color:#dbc79b33}
+.mirror .mirror-frame{position:relative;height:320px;margin:16px 0;border-radius:20px;background:radial-gradient(120% 100% at 50% 0,#3a3f7a44,#111423cc);border:1px solid #ffffff1a;overflow:hidden}
+.mirror-glow{position:absolute;inset:-40%;background:conic-gradient(from 0deg,#fffb 0 10%, transparent 10% 50%, #aefb 50% 60%, transparent 60% 100%);filter:blur(40px);animation:spin 9s linear infinite;opacity:.25}
+.mirror-glass{position:absolute;inset:0;background:radial-gradient(60% 100% at 50% 20%,#fff1,#fff0);backdrop-filter:blur(6px)}
+.mirror-hint{position:absolute;bottom:12px;right:14px;font-size:12px;opacity:.6}
+@keyframes spin{to{transform:rotate(360deg)}}
