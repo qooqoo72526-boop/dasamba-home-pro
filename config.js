@@ -1,7 +1,10 @@
 
 // === Dasamba Home PRO V2 Config ===
 // Set your backend base URL (no trailing slash), e.g. "https://dasamba-ai-dasamba-backend-v.hf.space"
-const BASE_URL = window.BASE_URL_OVERRIDE || "https://dasamba-ai-dasamba-backend-v.hf.space";
+const BASE_URL = const CONFIG = {
+  BASE_URL: "https://api.openai.com/v1",
+  API_KEY: process.env.OPENAI_API_KEY,  // ✅ 這一行很重要
+};
 
 export async function chatToBackend(message) {
   const res = await fetch(`${BASE_URL}/api/chat`, {
