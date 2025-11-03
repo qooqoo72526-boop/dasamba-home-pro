@@ -1,0 +1,34 @@
+
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>解析信件 · Dasamba</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="page">
+  <a href="./index.html" class="back">← 返回</a>
+  <h1 class="h1">LETTER ORACLE 解析信件</h1>
+  <div class="lead">把今天卡住的地方寫成一封信 我會把它翻譯成你的覺醒路徑</div>
+  <div class="surface">
+    <textarea id="letterBody" placeholder="就當作寫封信給宇宙"></textarea>
+    <div class="actions run">
+      <button class="btn primary" onclick="run()">生成解析</button>
+    </div>
+  </div>
+  <div id="out" class="reply"></div>
+</div>
+<script type="module">
+  import { chatToBackend } from './config.js';
+  window.run = async ()=>{
+    const ta = document.querySelector('#letterBody');
+    const out = document.querySelector('#out');
+    const text = ta.value.trim();
+    if(!text){ out.textContent = "說吧 我在"; return; }
+    out.textContent = "正在寫回信……";
+    const prompt = `用覺醒派教練的語氣 幫我把這封信轉成 600 字以上的覺醒解析 不要條列 不要官腔：${text}`;
+    const reply = await chatToBackend(prompt);
+    out.textContent = reply;
+  }
+</script>
+</body></html>

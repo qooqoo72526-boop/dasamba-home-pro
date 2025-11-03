@@ -1,0 +1,51 @@
+
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>雲上小聊 · Dasamba</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="page">
+  <a href="./index.html" class="back">← 返回</a>
+  <h1 class="h1">CLOUD NEST 雲上小聊</h1>
+  <div class="lead">像寫信給一個朋友 他會以自己的性格回你</div>
+  <div class="surface" style="display:flex; gap:12px; align-items:flex-start;">
+    <img id="letterAvatar" src="./assets/img/migou.webp" alt="avatar" style="width:86px; height:86px; border-radius:16px; background:rgba(255,255,255,.06); object-fit:contain;">
+    <div style="flex:1">
+      <div style="display:flex; gap:10px; align-items:center; margin-bottom:8px;">
+        <label class="input" style="display:flex; gap:6px; align-items:center;">
+          <input type="radio" name="who" value="migou" checked> 米果
+        </label>
+        <label class="input" style="display:flex; gap:6px; align-items:center;">
+          <input type="radio" name="who" value="ajin"> 阿金
+        </label>
+        <label class="input" style="display:flex; gap:6px; align-items:center;">
+          <input type="radio" name="who" value="gungan"> 滾滾
+        </label>
+      </div>
+      <textarea id="letterText" placeholder="說說你現在的事"></textarea>
+      <div class="actions run">
+        <button class="btn primary" onclick="runLetter()">送出</button>
+      </div>
+    </div>
+  </div>
+  <div id="letterOut"></div>
+  <div class="footer">雲層會飄過 字都小小的 但我有在聽</div>
+</div>
+<script type="module">
+  import { runLetter } from './scripts.js';
+  import './config.js';
+  window.runLetter = runLetter;
+  // sync avatar on change
+  const params = new URLSearchParams(location.search);
+  const who = params.get('who') || 'migou';
+  document.querySelector(`input[value="${who}"]`).checked = true;
+  document.querySelector('#letterAvatar').src = `./assets/img/${who}.webp`;
+  document.querySelectorAll('input[name=who]').forEach(r=>{
+    r.addEventListener('change', ()=>{
+      document.querySelector('#letterAvatar').src = `./assets/img/${r.value}.webp`;
+    })
+  });
+</script>
+</body></html>

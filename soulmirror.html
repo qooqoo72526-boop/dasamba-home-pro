@@ -1,0 +1,26 @@
+
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>靈魂照妖鏡 · Dasamba</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<canvas id="stars"></canvas>
+<div class="page">
+  <a href="./index.html" class="back">← 返回</a>
+  <h1 class="h1">SOUL MIRROR 靈魂照妖鏡</h1>
+  <div class="lead">寫下你現在最真實的掙扎 或渴望 我會生成一段深層解析</div>
+  <div class="surface">
+    <textarea id="soulText" placeholder="例如：我總是在討好別人 可是越來越不快樂"></textarea>
+    <div class="actions run">
+      <button class="btn primary" onclick="runSoulMirror()">生成解析</button>
+    </div>
+  </div>
+  <div id="soulOut" class="reply"></div>
+</div>
+<script type="module">
+  import { runSoulMirror } from './scripts.js';
+  import './config.js';
+  window.runSoulMirror = runSoulMirror;
+</script>
+</body></html>

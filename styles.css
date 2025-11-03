@@ -1,0 +1,105 @@
+
+/* ===== Dasamba Awakening Universe — PRO V2 ===== */
+:root{
+  --bg:#070916;
+  --ink:#eaeff7;
+  --muted:#b9c0d4;
+  --gold:#e1c46a;
+  --accent:#94b8ff;
+  --pink:#f5c0cc;
+  --glass:rgba(255,255,255,.06);
+  --blur:18px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: radial-gradient(1200px 600px at 40% -10%, #1a2454 0%, transparent 60%), radial-gradient(800px 400px at 80% 10%, #361a54 0%, transparent 55%), var(--bg);
+  color:var(--ink);
+  overflow-x:hidden;
+  letter-spacing:.02em;
+}
+
+/* starfield */
+#stars, #nebula{
+  position:fixed; inset:0; z-index:-2;
+}
+#nebula{filter: blur(40px) saturate(1.4) opacity(.6);}
+
+.container{max-width:1200px; margin:0 auto; padding:48px 16px 96px;}
+
+/* hero */
+.hero{padding:80px 0 24px; text-align:center; position:relative;}
+.kicker{font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:.2em;}
+.title{font-weight:800; font-size:clamp(22px, 4vw, 40px); margin:8px 0 8px; 
+  background:linear-gradient(90deg,#fff, #ffe6a1 30%, #b3d3ff 60%, #fff);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 8px 32px rgba(255,255,255,.06));
+}
+.subtitle{font-size:14px; color:var(--muted);}
+.mantra{margin-top:10px; font-size:13px; color:#dfe7ff;}
+
+/* float grid */
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:36px;}
+@media (max-width:900px){.grid{grid-template-columns:1fr; gap:14px;}}
+
+.card{
+  position:relative; padding:16px 14px 14px; border-radius:18px;
+  background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  backdrop-filter: blur(var(--blur)); box-shadow:0 20px 60px rgba(0,0,0,.35), inset 0 1px rgba(255,255,255,.25);
+  transform:translateY(0) translateZ(0); transition:transform .45s ease, box-shadow .45s ease;
+  border:1px solid rgba(255,255,255,.08);
+}
+.card:hover{ transform:translateY(-6px); box-shadow:0 28px 80px rgba(0,0,0,.45); }
+.card .thumb{
+  width:100%; aspect-ratio: 16/10; border-radius:14px; overflow:hidden; position:relative; background:rgba(255,255,255,.04);
+}
+.card .thumb img{width:100%; height:100%; object-fit:contain; object-position:center; transform:translateZ(0);}
+.badge{position:absolute; top:10px; left:10px; font-size:11px; padding:4px 8px; border-radius:999px; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.14);}
+
+.card h3{margin:10px 0 6px; font-size:14px; font-weight:700; letter-spacing:.06em;}
+.card p{margin:0; font-size:12px; color:var(--muted); line-height:1.6;}
+
+.actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px;}
+.btn{
+  font-size:12px; padding:8px 12px; border-radius:12px; background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14); color:var(--ink); text-decoration:none; cursor:pointer;
+}
+.btn.ghost{background:transparent}
+.btn.primary{background:linear-gradient(180deg,#2e3f92,#1a2a73); border-color:#7aa2ff}
+
+/* quote under grid */
+.quote{margin:24px auto 0; text-align:center; color:#dfe7ff; font-size:12px;}
+
+/* modal */
+.modal{ position:fixed; inset:0; display:none; place-items:center; background:rgba(5,7,16,.6); backdrop-filter: blur(8px); }
+.modal.open{display:grid;}
+.modal-card{
+  width:min(820px, 92vw); border-radius:20px; background:linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.14); padding:20px; box-shadow:0 30px 120px rgba(0,0,0,.6);
+}
+.modal-head{display:flex; align-items:center; gap:12px; margin-bottom:10px;}
+.avatar{width:86px; height:86px; flex:0 0 86px; border-radius:16px; overflow:hidden; background:rgba(255,255,255,.06); display:grid; place-items:center;}
+.avatar img{width:100%; height:100%; object-fit:contain;}
+.mtitle{font-size:14px; font-weight:800; letter-spacing:.06em;}
+.mdesc{font-size:12px; color:var(--muted); line-height:1.8; margin-top:6px;}
+
+/* letter / chat pages */
+.page{max-width:900px; margin:0 auto; padding:32px 16px 96px;}
+.back{font-size:12px; text-decoration:none; color:var(--muted);}
+.h1{margin:10px 0 12px; font-weight:900; font-size:clamp(18px, 3vw, 28px); background:linear-gradient(90deg,#fff,#e9d28e,#b1ccff); -webkit-background-clip:text; color:transparent;}
+.lead{font-size:13px; color:#e5ecff; margin-bottom:12px;}
+.surface{background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.12); border-radius:16px; padding:14px;}
+textarea{width:100%; min-height:130px; background:transparent; border:none; color:var(--ink); font-size:13px; outline:none; resize:vertical;}
+.input{background:rgba(255,255,255,.06); border-radius:12px; padding:10px 12px; font-size:12px; border:1px solid rgba(255,255,255,.12);}
+.run{margin-top:12px;}
+.reply{margin-top:14px; font-size:13px; color:#e6efff; white-space:pre-wrap; line-height:1.9;}
+
+/* envelope chat look */
+.envelope{margin-top:12px; background:linear-gradient(180deg,#f8fafc,#eef3ff); color:#0c1326; border-radius:14px; padding:14px; box-shadow:0 16px 60px rgba(0,0,0,.28); font-size:13px;}
+.envelope small{display:block; color:#5a6380; margin-bottom:6px}
+
+/* tiny footer */
+.footer{margin-top:36px; text-align:center; font-size:11px; color:var(--muted); opacity:.9}

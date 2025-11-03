@@ -1,0 +1,88 @@
+
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emotional Value AI | Awakening Universe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="./styles.css">
+<meta name="description" content="Emotional Value AI | Awakening Universe — 大三巴覺醒宇宙 AI">
+</head>
+<body>
+<canvas id="stars"></canvas><canvas id="nebula"></canvas>
+<div class="container hero">
+  <div class="kicker">Emotional Value AI</div>
+  <h1 class="title">AWAKENING UNIVERSE</h1>
+  <div class="subtitle">大三巴覺醒宇宙 AI</div>
+  <div class="mantra">我不療癒 我只教人覺醒</div>
+
+  <div class="grid">
+    <section class="card">
+      <div class="thumb">
+        <span class="badge">MIGOU</span>
+        <img src="./assets/img/migou.webp" alt="米果">
+      </div>
+      <h3>米果</h3>
+      <p>自我價值 邊界 小公主 勇敢而聰明</p>
+      <div class="actions">
+        <button class="btn primary" onclick="openPersona('migou')">看看她</button>
+        <a class="btn ghost" href="./dialogue.html?who=migou">雲上小聊</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="thumb">
+        <span class="badge">AJIN</span>
+        <img src="./assets/img/ajin.webp" alt="阿金">
+      </div>
+      <h3>阿金</h3>
+      <p>反骨 自由 小霸王 帶頭又敢衝</p>
+      <div class="actions">
+        <button class="btn primary" onclick="openPersona('ajin')">看看他</button>
+        <a class="btn ghost" href="./dialogue.html?who=ajin">雲上小聊</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="thumb">
+        <span class="badge">GUNGAN</span>
+        <img src="./assets/img/gungan.webp" alt="滾滾">
+      </div>
+      <h3>滾滾</h3>
+      <p>溫誠 安全感 靜靜陪你 就是一種愛</p>
+      <div class="actions">
+        <button class="btn primary" onclick="openPersona('gungan')">看看他</button>
+        <a class="btn ghost" href="./dialogue.html?who=gungan">雲上小聊</a>
+      </div>
+    </section>
+  </div>
+
+  <div class="actions" style="justify-content:center; margin-top:24px;">
+    <a class="btn" href="./soulmirror.html">靈魂照妖鏡</a>
+    <a class="btn" href="./letters.html">解析信件</a>
+  </div>
+
+  <div class="quote">覺醒不是修復 而是重生 不必學飛 你只是忘了自己有翅膀</div>
+  <div class="footer">© Dasamba Awakening Universe</div>
+</div>
+
+<!-- persona modal -->
+<div id="personaModal" class="modal" onclick="if(event.target.id==='personaModal') closeModal()">
+  <div class="modal-card">
+    <div class="modal-head">
+      <div class="avatar"><img alt="avatar"></div>
+      <div>
+        <div class="mtitle"></div>
+        <div class="mdesc"></div>
+      </div>
+    </div>
+    <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:10px;">
+      <a class="btn ghost" onclick="closeModal()">關閉</a>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+  import {openPersona, closeModal} from './scripts.js';
+  window.openPersona = openPersona;
+  window.closeModal = closeModal;
+</script>
+</body></html>
